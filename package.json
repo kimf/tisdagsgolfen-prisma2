@@ -11,7 +11,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true keystone dev",
+    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=false KEYSTONE_URI=http://localhost:3000/admin/api DATABASE_URL=postgres://localhost/tisdagsgolfen_keystone keystone dev",
     "build": "cross-env NODE_ENV=production keystone build",
     "start": "cross-env NODE_ENV=production keystone start"
   },
@@ -19,7 +19,10 @@
     "@keystonejs/adapter-knex": "^6.3.2",
     "@keystonejs/app-admin-ui": "^5.9.1",
     "@keystonejs/app-graphql": "^5.1.2",
+    "@keystonejs/app-next": "^5.1.1",
+    "@keystonejs/fields": "^6.3.2",
     "@keystonejs/keystone": "^6.0.0",
+    "@keystonejs/list-plugins": "^5.1.1",
     "cross-env": "^7.0.0"
   }
 }
