@@ -3,7 +3,7 @@ const { Text, Relationship, Select } = require("@keystonejs/fields");
 module.exports = {
   name: "Season",
   fields: {
-    name: { type: Text, isRequired: true },
+    name: { type: Text, isRequired: true, isUnique: true },
     status: {
       type: Select,
       options: ["REGULAR", "FINALS", "FINISHED"],
