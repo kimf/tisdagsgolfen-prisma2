@@ -1,17 +1,6 @@
-#!/usr/bin/env ruby
-oldrev, newrev = ARGV
+#!/usr/bin/env bash
 
-def run(cmd)
-  exit($?.exitstatus) unless system "umask 002 && #{cmd}"
-end
-
-NODE_ENV = ENV['NODE_ENV'] || 'production'
-
-run "npm install"
-run "npm run build"
-
-# clear cached assets (unversioned/ignored files)
-# run "git clean -x -f -- public/stylesheets public/javascripts"
-
-# clean unversioned files from vendor/plugins (e.g. old submodules)
-# run "git clean -d -f -- vendor/plugins"
+. ~/.nvm/nvm.sh
+nvm use v12.16.1
+npm install
+NODE_ENV=production npm run build
