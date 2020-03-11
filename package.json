@@ -11,7 +11,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true KEYSTONE_URI=http://localhost:3000/admin/api DATABASE_URL=postgres://localhost/tisdagsgolfen_keystone keystone dev",
+    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true DATABASE_URL=postgres://localhost/tisdagsgolfen_keystone keystone dev",
     "build": "cross-env NODE_ENV=production keystone build",
     "start": "cross-env NODE_ENV=production keystone start"
   },
