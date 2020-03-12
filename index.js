@@ -12,12 +12,12 @@ const season = require("./models/season");
 
 const keystone = new Keystone({
   name: "Tisdagsgolfen",
-  adapter: new KnexAdapter({ dropDatabase: true }),
-  onConnect: async keystone => {
-    await keystone.createItems({
-      Season: [{ name: "2020", status: "REGULAR" }]
-    });
-  }
+  adapter: new KnexAdapter() // { dropDatabase: false }
+  // onConnect: async keystone => {
+  //   await keystone.createItems({
+  //     Season: [{ name: "2020", status: "REGULAR" }]
+  //   });
+  // }
 });
 
 [course, event, hole, player, score, season].forEach(model => {
