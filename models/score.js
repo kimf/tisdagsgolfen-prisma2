@@ -5,9 +5,9 @@ module.exports = {
   fields: {
     resultValue: { type: Float, isRequired: true },
     eventPoints: { type: Float, isRequired: true },
-    kr: { type: Integer, isRequired: true },
-    beers: { type: Float, isRequired: true },
-    event: { type: Relationship, ref: "Event", isRequired: true },
-    player: { type: Relationship, ref: "Player", isRequired: true }
+    kr: { type: Integer, isRequired: true, defaultValue: 0 },
+    beers: { type: Float, isRequired: true, defaultValue: 0 },
+    event: { type: Relationship, ref: "Event.scores", isRequired: true },
+    player: { type: Relationship, ref: "Player.scores", isRequired: true }
   }
 };

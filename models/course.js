@@ -5,8 +5,8 @@ module.exports = {
   fields: {
     club: { type: Text, isRequired: true },
     name: { type: Text, isRequired: true },
-    par: { type: Integer, isRequired: true },
-    holes: { type: Relationship, ref: "Hole", many: true },
-    events: { type: Relationship, ref: "Event", many: true }
+    par: { type: Integer, isRequired: true, defaultValue: 72 },
+    holes: { type: Relationship, ref: "Hole.course", many: true },
+    events: { type: Relationship, ref: "Event.course", many: true }
   }
 };

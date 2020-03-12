@@ -21,7 +21,6 @@
     "@keystonejs/adapter-knex": "^6.3.2",
     "@keystonejs/app-admin-ui": "^5.9.1",
     "@keystonejs/app-graphql": "^5.1.2",
-    "@keystonejs/app-next": "^5.1.1",
     "@keystonejs/fields": "^6.3.2",
     "@keystonejs/keystone": "^6.0.0",
     "@keystonejs/list-plugins": "^5.1.1",

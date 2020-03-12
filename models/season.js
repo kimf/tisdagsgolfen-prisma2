@@ -7,11 +7,12 @@ module.exports = {
     status: {
       type: Select,
       options: ["REGULAR", "FINALS", "FINISHED"],
-      isRequired: true
+      isRequired: true,
+      defaultValue: "REGULAR"
     },
     events: {
       type: Relationship,
-      ref: "Event",
+      ref: "Event.season",
       many: true
     },
     // TODO: move to FinalInfo model?
