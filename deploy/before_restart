@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-. ~/.nvm/nvm.sh
-nvm use v12.16.1
-yarn install
-NODE_ENV=production yarn run build
-NODE_ENV=production yarn run prod:migrate
