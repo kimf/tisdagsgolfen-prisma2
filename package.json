@@ -2,46 +2,34 @@
   "name": "tisdagsgolfen",
   "description": "Backend for Tisdagsgolfen app",
   "private": true,
-  "version": "5.0.1",
+  "version": "2.0.0",
   "author": "Kim Fransman <kim.fransman@gmail.com>",
   "repository": "https://github.com/kimf/tisdagsgolfen-backend-2020",
   "homepage": "https://tisdagsgolfen.fransman.se",
   "license": "MIT",
-  "engines": {
-    "node": ">=10.0.0"
-  },
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "yarn -s clean && tsc",
-    "dev": "ts-node-dev --tree-kill --no-notify --respawn --transpile-only src/server.ts",
-    "dev:migrate": "prisma2 migrate save --experimental -c && prisma2 migrate up --experimental -c",
-    "prod:migrate": "prisma2 migrate up --experimental -c",
-    "generate:prisma": "prisma2 generate",
-    "generate:nexus": "ts-node --transpile-only src/schema.ts",
-    "generate": "yarn -s generate:prisma && yarn -s generate:nexus",
-    "postinstall": "yarn generate && yarn prod:migrate"
+    "format": "npx prettier --write './**/*.{ts,md}' '!./prisma/**/*.md'",
+    "dev": "nexus dev",
+    "build": "nexus build",
+    "start": "node node_modules/.build"
   },
   "dependencies": {
-    "@prisma/client": "^2.0.0-preview024",
-    "express": "^4.17.1",
-    "graphql": "^14.6.0",
-    "graphql-tools": "^4.0.7",
-    "graphql-yoga": "^1.18.3",
-    "nexus": "^0.12.0-rc.13",
-    "nexus-prisma": "^0.11.1"
+    "nexus-future": "^0.11.2-next.3",
+    "nexus-plugin-prisma": "^0.4.4"
   },
   "devDependencies": {
-    "@types/graphql": "^14.5.0",
-    "@types/node": "^13.9.1",
-    "@types/ws": "^7.2.2",
-    "prisma2": "^2.0.0-preview024",
-    "ts-node": "^8.6.2",
-    "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.8.3"
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   },
   "prettier": {
+    "semi": false,
     "singleQuote": true,
-    "semi": true,
     "trailingComma": "all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

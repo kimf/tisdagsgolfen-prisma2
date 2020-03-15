@@ -1,3 +1,0 @@
-# Tisdagsgolfen keystonejs backend
-
-## UNRELEASED
