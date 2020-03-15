@@ -1,0 +1,40 @@
+type Season {
+  id: ID!
+  name: String!
+  status: String!
+  photo: String
+  events: [Event]
+  winner: String
+  finalInfo: String
+}
+
+type Course {
+  id: ID!
+  club: String!
+  name: String!
+  par: Int!
+  event: [Event]
+  holes: [Hole]
+}
+
+type Hole {
+  id: ID!
+  index: Int!
+  number: Int!
+  par: Int!
+  course: Course!
+}
+
+type Event {
+  id: ID!
+  scoringType: String!
+  special: Boolean!
+  status: String!
+  type: String!
+  course: Course!
+  season: Season!
+}
+
+type Query {
+  seasons: [Season!]!
+}

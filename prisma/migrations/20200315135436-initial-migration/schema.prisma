@@ -1,0 +1,100 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+model Course {
+  id     Int     @id @default(autoincrement())
+  club   String
+  name   String
+  par    Int     @default(72)
+  events Event[]
+  holes  Hole[]
+}
+
+model Event {
+  id      Int          @id @default(autoincrement())
+  special Boolean      @default(false)
+  scoring EventScoring @default(POINTS)
+  status  EventStatus  @default(STARTED)
+  type    EventType    @default(INDIVIDUAL)
+  course  Course
+  season  Season
+  scores  Score[]
+}
+
+model Hole {
+  id     Int    @id @default(autoincrement())
+  index  Int
+  number Int
+  par    Int
+  course Course
+}
+
+model Player {
+  id        Int     @id @default(autoincrement())
+  firstName String
+  lastName  String
+  photo     String?
+  scores    Score[]
+}
+
+model Score {
+  id          Int    @id @default(autoincrement())
+  resultValue Float
+  eventPoints Float
+  event       Event
+  player      Player
+  beers       Float  @default(0)
+  kr          Int    @default(0)
+}
+
+model Season {
+  id        Int          @id @default(autoincrement())
+  name      String       @unique
+  status    SeasonStatus
+  events    Event[]
+  finalInfo FinalInfo?
+}
+
+model FinalInfo {
+  id     Int    @id @default(autoincrement())
+  photo  String
+  winner Player
+  story  String
+}
+
+model Team {
+  id      Int      @id @default(autoincrement())
+  players Player[]
+}
+
+model ScoringSession {
+  id          Int      @id @default(autoincrement())
+  event       Event
+  currentHole Int      @default(value: 1)
+  player      Player[]
+  teams       Team[]
+}
+
+
+enum EventStatus {
+  STARTED FINISHED
+}
+
+enum EventType {
+  INDIVIDUAL TEAM
+}
+
+enum EventScoring {
+  POINTS STROKES
+}
+
+enum SeasonStatus {
+  REGULAR FINALS FINISHED
+}
