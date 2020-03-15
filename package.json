@@ -11,8 +11,14 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
-    "gen": "prisma2 generate"
+    "clean": "rm -rf dist",
+    "build": "yarn -s clean && yarn -s generate && tsc",
+    "prod:migrate": "prisma2 migrate up --experimental -c",
+    "dev": "ts-node-dev --tree-kill --no-notify --respawn --transpile-only src/server.ts",
+    "dev:migrate": "prisma2 migrate save --experimental -c && prisma2 migrate up --experimental -c",
+    "generate": "yarn -s generate:prisma && yarn -s generate:nexus",
+    "generate:prisma": "prisma2 generate",
+    "generate:nexus": "NODE_ENV=development ts-node --transpile-only src/schema"
   },
   "dependencies": {
     "@prisma/client": "^2.0.0-preview024",
