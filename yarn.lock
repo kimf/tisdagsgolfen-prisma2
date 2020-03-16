@@ -2580,10 +2580,10 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nexus-future@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/nexus-future/-/nexus-future-0.11.1.tgz#ee4d245859fc5a9ab26fd6a25c6ca218e2a793b6"
-  integrity sha512-vTs7RGfoOYU0XDJ4ThbqAcbn9gRCF361/uNA3DMCLOMxvmaO8xvQBhcTnmT9skR5fUOH4FE+RpNBa03hP4Fyqg==
+nexus-future@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/nexus-future/-/nexus-future-0.11.2.tgz#e9b74c6453cabd1fa7b42963b76b1a8d7362a029"
+  integrity sha512-QJgYm3kvGjLKtPmxaHy7Lg7L1hk7yD82jEqYVXm5mkKS+VHozeqZHI2n6xruz+FKUg8qdHcmXki3XLvWru2cWA==
   dependencies:
     "@nexus/schema" "^0.12.0-rc.13"
     "@types/express" "^4.17.2"
@@ -2614,10 +2614,10 @@ nexus-future@^0.11.1:
     tslib "^1"
     typescript "^3.7.2"
 
-nexus-plugin-prisma@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/nexus-plugin-prisma/-/nexus-plugin-prisma-0.4.4.tgz#b7fa18c377f0743a38c0b90deb6de71820efc28c"
-  integrity sha512-A6n8H6NYkZvPuKU1aUfTRAlq91GlSeoBr43WAhxonbI14vqW+u5zQ7H5HAmtIQzuPPJJSWOYCEZb8XFBrbt6FQ==
+nexus-plugin-prisma@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/nexus-plugin-prisma/-/nexus-plugin-prisma-0.5.0.tgz#a412168213f0ea356cd90644bcb6aa38cfd1066d"
+  integrity sha512-qX/BuPZ4b9/+lm58GJ9hPM5361RGd5k019NMj3XXl9wazqTJoXi7AaFunoyOpKeyu4xLJZhxr/gFmwTwSmVhLA==
   dependencies:
     "@prisma/client" "2.0.0-preview023"
     "@prisma/generator-helper" "0.0.43"
