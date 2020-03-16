@@ -11,13 +11,16 @@
     "format": "npx prettier --write './**/*.{ts,md}' '!./prisma/**/*.md'",
     "dev": "nexus dev",
     "build": "nexus build -d heroku",
-    "start": "node node_modules/.build"
+    "start": "node node_modules/.build",
+    "typegen:nexus": "cnt --mq -f -o --outDir ./src/graphql",
+    "typegen:ts": "create-types"
   },
   "dependencies": {
     "nexus-future": "^0.11.2",
     "nexus-plugin-prisma": "^0.5.0"
   },
   "devDependencies": {
+    "create-nexus-type": "^1.1.7",
     "husky": "^4.2.3",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
