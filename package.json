@@ -10,7 +10,7 @@
   "scripts": {
     "format": "npx prettier --write './**/*.{ts,md}' '!./prisma/**/*.md'",
     "dev": "nexus dev",
-    "build": "nexus build",
+    "build": "nexus build -d heroku",
     "start": "node node_modules/.build"
   },
   "dependencies": {
@@ -31,5 +31,8 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "engines": {
+    "node": "13.x"
   }
 }
