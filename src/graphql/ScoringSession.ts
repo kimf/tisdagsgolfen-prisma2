@@ -6,7 +6,7 @@ export const ScoringSession = schema.objectType({
     t.model.id()
     t.model.event()
     t.model.currentHole()
-    t.model.player()
+    t.model.players()
     t.model.teams()
   },
 })

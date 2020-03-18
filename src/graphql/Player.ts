@@ -7,7 +7,6 @@ export const Player = schema.objectType({
     t.model.firstName()
     t.model.lastName()
     t.model.photo()
-    t.model.scores()
   },
 })
 

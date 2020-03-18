@@ -1,0 +1,22 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "Player",
+      "field": "scores"
+    },
+    {
+      "tag": "CreateField",
+      "model": "ScoringSession",
+      "field": "players",
+      "type": "Player",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "ScoringSession",
+      "field": "player"
+    }
+  ]
+}
