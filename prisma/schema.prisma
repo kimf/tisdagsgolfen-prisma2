@@ -23,8 +23,10 @@ model Event {
   scoring EventScoring @default(POINTS)
   status  EventStatus  @default(STARTED)
   type    EventType    @default(INDIVIDUAL)
-  course  Course
-  season  Season
+  course  Course       @relation(fields: [courseId], references: [id])
+  courseId Int         @map("course")
+  season  Season       @relation(fields: [seasonId], references: [id])
+  seasonId Int         @map("season")
   scores  Score[]
 }
 
@@ -33,7 +35,8 @@ model Hole {
   index  Int
   number Int
   par    Int
-  course Course
+  course Course @relation(fields: [courseId], references: [id])
+  courseId Int  @map("course")
 }
 
 model Player {
@@ -41,14 +44,18 @@ model Player {
   firstName String
   lastName  String
   photo     String?
+  teams     Team[] @relation(references: [id])
+  scoringSessions ScoringSession[] @relation(references: [id])
 }
 
 model Score {
   id          Int    @id @default(autoincrement())
   resultValue Float
   eventPoints Float
-  event       Event
-  player      Player
+  event       Event  @relation(fields: [eventId], references: [id])
+  eventId     Int    @map("event")
+  player      Player @relation(fields: [playerId], references: [id])
+  playerId    Int    @map("player")
   beers       Float  @default(0)
   kr          Int    @default(0)
 }
@@ -64,21 +71,24 @@ model Season {
 model FinalInfo {
   id     Int    @id @default(autoincrement())
   photo  String
-  winner Player
+  winner Player @relation(fields: [winnerId], references: [id])
+  winnerId Int  @map("winner")
   story  String
 }
 
 model Team {
   id      Int      @id @default(autoincrement())
-  players Player[]
+  players Player[] @relation(references: [id])
+  scoringSessions ScoringSession[] @relation(references: [id])
 }
 
 model ScoringSession {
   id          Int      @id @default(autoincrement())
-  event       Event
+  event       Event    @relation(fields: [eventId], references: [id])
+  eventId     Int      @map("event")
   currentHole Int      @default(value: 1)
-  players     Player[]
-  teams       Team[]
+  players     Player[] @relation(references: [id])
+  teams       Team[] @relation(references: [id])
 }
 
 enum EventStatus {
