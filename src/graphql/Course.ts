@@ -1,4 +1,4 @@
-import { schema } from 'nexus-future'
+import { schema } from 'nexus'
 
 export const Course = schema.objectType({
   name: 'Course',

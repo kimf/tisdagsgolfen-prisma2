@@ -12,17 +12,18 @@
     "dev": "nexus dev",
     "build": "nexus build -d heroku",
     "start": "node node_modules/.build",
-    "typegen:nexus": "cnt --mq -f -o --outDir ./src/graphql",
-    "typegen:ts": "create-types"
+    "doctor": "nexus doctor"
   },
   "dependencies": {
-    "nexus-future": "^0.12.0",
-    "nexus-plugin-prisma": "^0.5.1"
+    "cors": "^2.8.5",
+    "nexus": "next",
+    "nexus-plugin-prisma": "^0.6.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "create-nexus-type": "^1.1.7",
     "husky": "^4.2.3",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "pretty-quick": "^2.0.1"
   },
   "prettier": {
