@@ -2411,10 +2411,10 @@ nexus-prisma@^0.12.0:
     fs-extra "^8.1.0"
     pluralize "^8.0.0"
 
-nexus@next:
-  version "0.20.0-next.13"
-  resolved "https://registry.yarnpkg.com/nexus/-/nexus-0.20.0-next.13.tgz#c8e39f2e2eb6cf0021e56f6130109f9a98fc0b8d"
-  integrity sha512-iW8l2UE6/cdheUoCxvK9WeNV5Wz/nrBmA6nBx8IjjNDWU7aW0WawrMkIzVjWtLL6deo6czelFUBWIQRumTE6Pw==
+nexus@^0.20.0-next.16:
+  version "0.20.0-next.16"
+  resolved "https://registry.yarnpkg.com/nexus/-/nexus-0.20.0-next.16.tgz#495e1cc8d555400b6d18fa42bdff65d487d1b352"
+  integrity sha512-D0erLBdEAFvtQSVy3IQBMYfvNxsOC/afzP5OkrZ7FdY3aJPaY1Z37v5vDygZPohKDTKLEeioia0tHPNQqwmS6Q==
   dependencies:
     "@nexus/schema" "^0.13.1"
     "@types/express" "^4.17.2"
@@ -2444,6 +2444,7 @@ nexus@next:
     ts-node "^8.5.0"
     tsconfig "^7.0.0"
     tslib "^1"
+    type-fest "^0.13.0"
     typescript "^3.7.2"
 
 node-fetch@2.6.0, node-fetch@^2.6.0:
@@ -2730,9 +2731,9 @@ posix-character-classes@^0.1.0:
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
 
 prettier@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.2.tgz#1ba8f3eb92231e769b7fcd7cb73ae1b6b74ade08"
-  integrity sha512-5xJQIPT8BraI7ZnaDwSbu5zLrB6vvi8hVV58yHQ+QK64qrY40dULy0HSRlQ2/2IdzeBpjhDkqdcFBnFeDEMVdg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.4.tgz#2d1bae173e355996ee355ec9830a7a1ee05457ef"
+  integrity sha512-SVJIQ51spzFDvh4fIbCLvciiDMCrRhlN3mbZvv/+ycjvmF5E73bKdGfU8QDLNmjYJf+lsGnDBC4UUnvTe5OO0w==
 
 pretty-quick@^2.0.1:
   version "2.0.1"
@@ -3544,6 +3545,11 @@ type-fest@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.12.0.tgz#f57a27ab81c68d136a51fd71467eff94157fa1ee"
   integrity sha512-53RyidyjvkGpnWPMF9bQgFtWp+Sl8O2Rp13VavmJgfAP9WWG6q6TkrKU8iyJdnwnfgHI6k2hTlgqH4aSdjoTbg==
+
+type-fest@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.13.0.tgz#fd0fcac086697e6ed332e618efa5510161c6b81a"
+  integrity sha512-wi+bJ1w69/0n9xbs5A/+DEx00hIPXtT4+P9KWMGDueFFCTemF/om07hRhdGE1EhzjzK9xnjv5VUGc5+tBT+jbg==
 
 type-fest@^0.3.1:
   version "0.3.1"
